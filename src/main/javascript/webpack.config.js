@@ -10,8 +10,8 @@ module.exports = {
     },
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, '../resources/static/dist'),
-        publicPath: '/dist/'
+        path: path.resolve(__dirname, '../resources/static/dist/js'),
+        publicPath: '/dist/js/'
     },
     module: {
         rules: [
@@ -24,11 +24,11 @@ module.exports = {
             }
         ]
     },
-    plugins: [new VueLoaderPlugin(), 
-        new MiniCssExtractPlugin({ filename: "[name].css", chunkFilename: "[id].css" })],
+    plugins: [new VueLoaderPlugin(),
+        new MiniCssExtractPlugin({ filename: "../css/[name].css", chunkFilename: "[id].css" })],
     serve: {
         devMiddleware: {
-            publicPath: '/dist/'
+            publicPath: '/dist/js/'
         }
     }
 };
